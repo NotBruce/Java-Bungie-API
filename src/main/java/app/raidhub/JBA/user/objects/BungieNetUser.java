@@ -2,6 +2,9 @@ package app.raidhub.JBA.user.objects;
 
 import lombok.Data;
 
+/**
+ * Bungie.NET User Object
+ */
 @Data
 public class BungieNetUser {
 

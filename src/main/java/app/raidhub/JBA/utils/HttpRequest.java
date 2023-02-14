@@ -10,8 +10,13 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class HttpGetRequest {
+public class HttpRequest {
 
+    /**
+     * @param url required url to send request
+     * @return Response from Request URL
+     * TODO: Exceptions for Bungie API
+     */
     public static JsonObject GET(String url) {
         try {
             URL obj = new URL(url);

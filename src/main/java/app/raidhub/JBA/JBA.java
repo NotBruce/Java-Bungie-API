@@ -11,6 +11,6 @@ public class JBA {
     @Getter
     private static String apiKey;
     public JBA(String apiKey) {
-        this.apiKey = apiKey;
+        JBA.apiKey = apiKey;
     }
 }

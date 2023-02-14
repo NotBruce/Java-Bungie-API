@@ -2,6 +2,10 @@ package app.raidhub.JBA.user.objects;
 
 import app.raidhub.JBA.user.enums.BungieMembershipType;
 
+/**
+ * Bungie Memberships from a request
+ * TODO: Possibly check for Epic Games?
+ */
 public class BungieMembership {
 
     public String LastSeenDisplayName;
