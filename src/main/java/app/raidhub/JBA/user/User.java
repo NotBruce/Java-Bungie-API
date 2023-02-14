@@ -4,6 +4,7 @@ import app.raidhub.JBA.JBA;
 import app.raidhub.JBA.user.enums.BungieMembershipType;
 import app.raidhub.JBA.user.objects.BungieMembership;
 import app.raidhub.JBA.user.objects.BungieNetUser;
+import app.raidhub.JBA.user.objects.BungieTheme;
 import app.raidhub.JBA.utils.HttpRequest;
 import com.google.gson.Gson;
 import lombok.Data;
@@ -36,5 +37,12 @@ public class User {
         var membershipArray = HttpRequest.GET(JBA.getAPI_ROOT_PATH() + "/User/GetMembershipsById/" + id + "/" + type.getType()).getAsJsonArray("destinyMemberships");
         membershipArray.forEach(membership -> bungieMemberships.add(new Gson().fromJson(membership, BungieMembership.class)));
         return bungieMemberships.toArray(new BungieMembership[0]);
+    }
+
+    /**
+     * @return Available Bungie Themes from GET Request.
+     */
+    public BungieTheme getAvailableThemes() {
+        return new Gson().fromJson(HttpRequest.GET(JBA.getAPI_ROOT_PATH() + "/User/GetAvailableThemes"), BungieTheme.class);
     }
 }
